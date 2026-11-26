@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rhishika N Pavithran — Java Backend Developer specializing in Java, Spring Boot, Hibernate and SQL.">
-    <meta name="theme-color" content="#101321">
-    <title>rhishik.n.pavithran | Java Backend Developer</title>
+    <meta name="description" content="Rhishika N Pavithran — Java Backend & Full Stack Developer specializing in Java, Spring Boot, Hibernate, and MySQL across ERP and fintech systems.">
+    <meta name="theme-color" content="#fbf8fd">
+    <title>rhishika.n.pavithran | Java Backend Developer</title>
+
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem("portfolio-theme");
+                var theme = savedTheme === "dark" ? "dark" : "light";
+                document.documentElement.setAttribute("data-theme", theme);
+                var meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) {
+                    meta.setAttribute("content", theme === "dark" ? "#101321" : "#fbf8fd");
+                }
+            } catch (e) {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        })();
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,13 +33,7 @@
 
 <header class="navbar">
     <nav class="nav-container" aria-label="Main navigation">
-        <a href="#home" class="logo">rhishik.n.pavithran</a>
-
-        <button id="menuBtn" class="menu-btn" type="button"
-                aria-label="Open navigation menu" aria-expanded="false"
-                aria-controls="navMenu">
-            <span></span><span></span><span></span>
-        </button>
+        <a href="#home" class="logo">rhishika.n.pavithran</a>
 
         <div id="navMenu" class="nav-menu">
             <a href="#home">Home</a>
@@ -32,7 +42,27 @@
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
-            <a href="#contact" class="nav-contact">Let's Talk <span>↗</span></a>
+            <a href="#contact" class="nav-contact">Let's Talk <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="themeToggle" class="theme-toggle" type="button"
+                    aria-label="Switch to dark theme" aria-pressed="false"
+                    title="Switch to dark theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                </svg>
+            </button>
+
+            <button id="menuBtn" class="menu-btn" type="button"
+                    aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 </header>
@@ -41,42 +71,261 @@
     <!-- HERO -->
     <section id="home" class="hero section-padding">
         <div class="hero-container">
-            <div class="hero-content">
-                <div class="availability">
-                    <span class="status-dot"></span>
-                    OPEN TO OPPORTUNITIES · INDIA &amp; UAE
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="availability">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        OPEN TO OPPORTUNITIES · INDIA &amp; UAE
+                    </div>
+
+                    <p class="eyebrow">HELLO, I'M RHISHIKA N PAVITHRAN</p>
+
+                    <h1>
+                        Crafting reliable
+                        <span class="gradient-text">backend systems.</span>
+                    </h1>
+
+                    <p class="hero-role">
+                        Java Backend Developer <span aria-hidden="true">·</span> Spring Boot <span aria-hidden="true">·</span> Hibernate <span aria-hidden="true">·</span> MySQL
+                    </p>
+
+                    <p class="hero-description">
+                        A detail-driven Software Developer building production backend
+                        architectures for retail ERP and fintech platforms. I translate
+                        complex business workflows—from inventory and billing to live
+                        financial ledgers—into clean, transactional Java services and
+                        dependable REST APIs.
+                    </p>
+
+                    <p class="hero-location">
+                        <span aria-hidden="true">⌖</span>
+                        Kannur, Kerala, India <span class="location-separator" aria-hidden="true">·</span>
+                        Open to relocation
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Explore My Work <span aria-hidden="true">↗</span></a>
+                        <a href="assets/resume.pdf" class="btn btn-outline" download>Download Resume <span aria-hidden="true">↓</span></a>
+                        <button type="button" class="btn btn-ghost copy-email-btn" data-email="rhishikanpavithran@gmail.com">
+                            <span class="copy-label">Copy Email</span>
+                        </button>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/Rhishika-N-Pavithran" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                        <a href="https://linkedin.com/in/rhishika-n-pavithran" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                        <a href="mailto:rhishikanpavithran@gmail.com">rhishikanpavithran@gmail.com ↗</a>
+                    </div>
                 </div>
 
-                <p class="eyebrow">HELLO, I'M RHISHIKA</p>
+                <!-- GIRL WITH LAPTOP ANIMATED ILLUSTRATION -->
+                <div class="hero-visual" aria-label="Animated illustration of Rhishika coding on a laptop">
+                    <div class="illustration-stage">
+                        <div class="glow-orb orb-lavender" aria-hidden="true"></div>
+                        <div class="glow-orb orb-pink" aria-hidden="true"></div>
+                        <div class="glow-orb orb-blue" aria-hidden="true"></div>
 
-                <h1>
-                    Building reliable
-                    <span class="gradient-text">backend systems.</span>
-                </h1>
+                        <div class="floating-chip chip-spring" aria-hidden="true">
+                            <span class="chip-dot chip-dot-mint"></span>
+                            Spring Boot · Live
+                        </div>
 
-                <p class="hero-role">Java Backend Developer <span>|</span> Spring Boot <span>|</span> Hibernate</p>
+                        <div class="floating-chip chip-api" aria-hidden="true">
+                            <span class="chip-code">200 OK</span>
+                            REST API
+                        </div>
 
-                <p class="hero-description">
-                    Software developer with hands-on experience building production
-                    applications across fintech and retail jewellery domains. I enjoy
-                    developing business logic, REST APIs and database-driven solutions.
-                </p>
+                        <div class="floating-chip chip-db" aria-hidden="true">
+                            <span class="chip-dot chip-dot-lavender"></span>
+                            JPA / MySQL
+                        </div>
 
-                <p class="hero-location">
-                    <span aria-hidden="true">⌖</span>
-                    Kannur, Kerala, India <span class="location-separator">·</span>
-                    Open to relocation
-                </p>
+                        <svg class="dev-girl-svg" viewBox="0 0 460 440" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated developer girl working on her laptop">
+                            <defs>
+                                <linearGradient id="backdropArch" x1="65" y1="35" x2="395" y2="390" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="var(--illo-arch-1)"/>
+                                    <stop offset="55%" stop-color="var(--illo-arch-2)"/>
+                                    <stop offset="100%" stop-color="var(--illo-arch-3)"/>
+                                </linearGradient>
+                                <linearGradient id="sweaterGrad" x1="150" y1="215" x2="305" y2="345" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="var(--illo-sweater-1)"/>
+                                    <stop offset="100%" stop-color="var(--illo-sweater-2)"/>
+                                </linearGradient>
+                                <linearGradient id="laptopShell" x1="145" y1="240" x2="315" y2="345" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="var(--illo-laptop-1)"/>
+                                    <stop offset="100%" stop-color="var(--illo-laptop-2)"/>
+                                </linearGradient>
+                                <linearGradient id="screenGlow" x1="160" y1="245" x2="300" y2="335" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="var(--illo-screen-1)"/>
+                                    <stop offset="100%" stop-color="var(--illo-screen-2)"/>
+                                </linearGradient>
+                                <linearGradient id="hairGrad" x1="175" y1="75" x2="290" y2="230" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#3a2c4f"/>
+                                    <stop offset="100%" stop-color="#221933"/>
+                                </linearGradient>
+                            </defs>
 
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">Explore My Work <span>↗</span></a>
-                    <a href="assets/resume.pdf" class="btn btn-outline" download>Download Resume <span>↓</span></a>
+                            <!-- Soft pastel window arch behind her -->
+                            <path d="M85 375V195C85 112.157 152.157 45 235 45C317.843 45 385 112.157 385 195V375H85Z" fill="url(#backdropArch)" stroke="var(--border)" stroke-width="1.5"/>
+
+                            <!-- Subtle grid lines inside window -->
+                            <g opacity="0.28" stroke="var(--lavender)" stroke-width="1">
+                                <line x1="120" y1="130" x2="350" y2="130"/>
+                                <line x1="100" y1="190" x2="370" y2="190"/>
+                                <line x1="235" y1="55" x2="235" y2="320"/>
+                            </g>
+
+                            <!-- Floating sparkles -->
+                            <g class="sparkle-group">
+                                <path class="sparkle sparkle-1" d="M126 112L129 120L137 123L129 126L126 134L123 126L115 123L123 120L126 112Z" fill="var(--pink)"/>
+                                <path class="sparkle sparkle-2" d="M336 105L338.5 111.5L345 114L338.5 116.5L336 123L333.5 116.5L327 114L333.5 111.5L336 105Z" fill="var(--blue)"/>
+                                <circle class="sparkle sparkle-3" cx="352" cy="186" r="4" fill="var(--lavender)" opacity="0.65"/>
+                                <circle class="sparkle sparkle-1" cx="114" cy="204" r="3.5" fill="var(--mint)" opacity="0.7"/>
+                            </g>
+
+                            <!-- Cozy chair back -->
+                            <rect x="162" y="182" width="146" height="145" rx="34" fill="var(--illo-chair)" stroke="var(--border)" stroke-width="1.5"/>
+
+                            <!-- Girl character (gentle breathing/bobbing motion) -->
+                            <g class="girl-upper">
+                                <!-- Hair bun & back hair -->
+                                <circle cx="235" cy="79" r="24" fill="url(#hairGrad)"/>
+                                <rect x="219" y="96" width="32" height="8" rx="4" fill="var(--pink)"/>
+                                <path d="M174 152C172 110 198 88 235 88C272 88 298 110 296 152C295 178 290 202 280 218H190C180 202 175 178 174 152Z" fill="url(#hairGrad)"/>
+
+                                <!-- Shoulders & pastel sweater -->
+                                <path d="M150 328C152 254 182 222 235 222C288 222 318 254 320 328H150Z" fill="url(#sweaterGrad)"/>
+                                <!-- Sweater collar & subtle stripe -->
+                                <path d="M210 225C218 239 252 239 260 225" stroke="var(--illo-collar)" stroke-width="6" stroke-linecap="round"/>
+
+                                <!-- Neck -->
+                                <rect x="223" y="196" width="24" height="32" rx="12" fill="#f3c5ad"/>
+                                <path d="M223 205C231 212 239 212 247 205" fill="#e4ae93"/>
+
+                                <!-- Ears & tiny pastel stud earrings -->
+                                <circle cx="192" cy="158" r="9" fill="#f3c5ad"/>
+                                <circle cx="278" cy="158" r="9" fill="#f3c5ad"/>
+                                <circle cx="191" cy="165" r="2.8" fill="var(--pink)"/>
+                                <circle cx="279" cy="165" r="2.8" fill="var(--pink)"/>
+
+                                <!-- Face -->
+                                <path d="M194 147C194 118 211 103 235 103C259 103 276 118 276 147C276 179 257 203 235 203C213 203 194 179 194 147Z" fill="#f7cfb8"/>
+
+                                <!-- Soft blush -->
+                                <ellipse cx="209" cy="165" rx="9" ry="5" fill="#f29cb8" opacity="0.42"/>
+                                <ellipse cx="261" cy="165" rx="9" ry="5" fill="#f29cb8" opacity="0.42"/>
+
+                                <!-- Eyebrows -->
+                                <path d="M208 139C213 136 220 136 224 139" stroke="#3c2b4f" stroke-width="2.4" stroke-linecap="round"/>
+                                <path d="M246 139C250 136 257 136 262 139" stroke="#3c2b4f" stroke-width="2.4" stroke-linecap="round"/>
+
+                                <!-- Eyes with blink animation -->
+                                <g class="girl-eyes">
+                                    <circle cx="217" cy="151" r="4.5" fill="#291d3a"/>
+                                    <circle cx="253" cy="151" r="4.5" fill="#291d3a"/>
+                                    <circle cx="218.5" cy="149.4" r="1.5" fill="#ffffff"/>
+                                    <circle cx="254.5" cy="149.4" r="1.5" fill="#ffffff"/>
+                                </g>
+
+                                <!-- Cute round glasses -->
+                                <g stroke="var(--illo-glasses)" stroke-width="2.2" fill="rgba(255,255,255,0.08)">
+                                    <circle cx="217" cy="152" r="13"/>
+                                    <circle cx="253" cy="152" r="13"/>
+                                    <path d="M230 152H240" fill="none"/>
+                                    <path d="M195 149L204 151" fill="none"/>
+                                    <path d="M266 151L275 149" fill="none"/>
+                                </g>
+
+                                <!-- Nose & focused warm smile -->
+                                <path d="M235 156C233 162 234 164 237 165" stroke="#df9f85" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M226 177C231 182 239 182 244 177" stroke="#b9646d" stroke-width="2.5" stroke-linecap="round"/>
+
+                                <!-- Swept front bangs -->
+                                <path d="M191 142C195 112 214 97 237 97C261 97 278 112 279 142C269 125 253 116 239 116C228 116 212 128 191 142Z" fill="url(#hairGrad)"/>
+                            </g>
+
+                            <!-- Arms & animated typing hands -->
+                            <g class="typing-left">
+                                <path d="M164 260C153 288 158 317 183 326" stroke="var(--illo-sweater-2)" stroke-width="22" stroke-linecap="round"/>
+                                <ellipse cx="187" cy="328" rx="11" ry="8" fill="#f7cfb8"/>
+                            </g>
+                            <g class="typing-right">
+                                <path d="M306 260C317 288 312 317 287 326" stroke="var(--illo-sweater-2)" stroke-width="22" stroke-linecap="round"/>
+                                <ellipse cx="283" cy="328" rx="11" ry="8" fill="#f7cfb8"/>
+                            </g>
+
+                            <!-- Laptop glowing aura -->
+                            <ellipse class="laptop-glow-aura" cx="235" cy="296" rx="108" ry="44" fill="var(--lavender)" opacity="0.16"/>
+
+                            <!-- Laptop lid (back facing viewer, showing animated code reflection + logo) -->
+                            <g class="laptop-group">
+                                <!-- Screen back / sleek pastel chassis -->
+                                <rect x="150" y="242" width="170" height="106" rx="12" fill="url(#laptopShell)" stroke="var(--border)" stroke-width="1.5"/>
+                                <!-- Subtle inner glass panel showing live animated code bars -->
+                                <rect x="160" y="251" width="150" height="86" rx="7" fill="url(#screenGlow)" opacity="0.92"/>
+                                <!-- Animated code lines -->
+                                <g class="code-lines">
+                                    <rect class="code-bar bar-1" x="173" y="264" width="54" height="5" rx="2.5" fill="var(--pink)"/>
+                                    <rect class="code-bar bar-2" x="234" y="264" width="38" height="5" rx="2.5" fill="var(--blue)"/>
+                                    <rect class="code-bar bar-3" x="183" y="277" width="84" height="5" rx="2.5" fill="var(--lavender)"/>
+                                    <rect class="code-bar bar-4" x="183" y="290" width="62" height="5" rx="2.5" fill="var(--mint)"/>
+                                    <rect class="code-bar bar-5" x="252" y="290" width="34" height="5" rx="2.5" fill="var(--pink)"/>
+                                    <rect class="code-bar bar-6" x="173" y="303" width="96" height="5" rx="2.5" fill="var(--blue)"/>
+                                    <rect class="code-bar bar-2" x="173" y="316" width="44" height="5" rx="2.5" fill="var(--lavender)"/>
+                                    <rect class="code-cursor" x="223" y="315" width="3" height="8" rx="1.5" fill="#ffffff"/>
+                                </g>
+                                <!-- Laptop base -->
+                                <path d="M132 348H338L348 358C349 361 346 364 342 364H128C124 364 121 361 122 358L132 348Z" fill="var(--illo-laptop-base)" stroke="var(--border)" stroke-width="1.2"/>
+                                <rect x="212" y="352" width="46" height="4" rx="2" fill="var(--lavender)" opacity="0.45"/>
+                            </g>
+
+                            <!-- Desk surface -->
+                            <rect x="42" y="364" width="376" height="14" rx="7" fill="var(--illo-desk)" stroke="var(--border)" stroke-width="1.2"/>
+                            <rect x="78" y="378" width="304" height="8" rx="4" fill="var(--illo-desk-shadow)" opacity="0.5"/>
+
+                            <!-- Cozy coffee mug with animated steam -->
+                            <g class="desk-mug">
+                                <path class="steam steam-1" d="M88 323C84 316 92 310 88 302" stroke="var(--lavender)" stroke-width="2.2" stroke-linecap="round"/>
+                                <path class="steam steam-2" d="M97 325C93 317 101 311 97 303" stroke="var(--pink)" stroke-width="2.2" stroke-linecap="round"/>
+                                <path d="M108 338H114C118 338 120 341 120 345C120 349 118 352 114 352H108" stroke="var(--illo-mug)" stroke-width="3.5" stroke-linecap="round"/>
+                                <rect x="77" y="331" width="32" height="33" rx="7" fill="var(--illo-mug)" stroke="var(--border)" stroke-width="1.2"/>
+                                <rect x="83" y="341" width="20" height="4" rx="2" fill="var(--pink)" opacity="0.7"/>
+                            </g>
+
+                            <!-- Tiny potted desk succulent -->
+                            <g class="desk-plant">
+                                <path d="M366 336C358 324 348 326 353 338Z" fill="var(--mint)"/>
+                                <path d="M369 336C377 322 387 326 382 338Z" fill="var(--mint)" opacity="0.88"/>
+                                <path d="M367 337C364 318 372 315 371 337Z" fill="var(--blue)" opacity="0.85"/>
+                                <path d="M352 337H384L379 364H357L352 337Z" fill="var(--illo-pot)" stroke="var(--border)" stroke-width="1.2"/>
+                                <rect x="349" y="334" width="38" height="6" rx="3" fill="var(--pink)" opacity="0.75"/>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
+            </div>
 
-                <div class="social-links">
-                    <a href="https://github.com/Rhishika-N-Pavithran" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                    <a href="https://linkedin.com/in/rhishika-n-pavithran" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                    <a href="mailto:rhishikanpavithran@gmail.com">Email ↗</a>
+            <!-- RECRUITER QUICK-GLANCE IMPACT STRIP -->
+            <div class="recruiter-strip" aria-label="Recruiter summary highlights">
+                <div class="recruiter-stat">
+                    <span class="stat-label">CURRENT ROLE</span>
+                    <strong>Software Developer</strong>
+                    <p>Ignosi Enterprises · Apr 2025 – Present</p>
+                </div>
+                <div class="recruiter-stat">
+                    <span class="stat-label">CORE STACK</span>
+                    <strong>Java · Spring Boot</strong>
+                    <p>Spring MVC, JPA / Hibernate, MySQL</p>
+                </div>
+                <div class="recruiter-stat">
+                    <span class="stat-label">PRODUCTION DOMAINS</span>
+                    <strong>ERP &amp; Fintech</strong>
+                    <p>Billing, stock, purchasing &amp; live balances</p>
+                </div>
+                <div class="recruiter-stat">
+                    <span class="stat-label">EDUCATION</span>
+                    <strong>MCA · BCA 84%</strong>
+                    <p>Pursuing MCA (IGNOU) · 90% Plus Two</p>
                 </div>
             </div>
         </div>
@@ -123,21 +372,21 @@
                         <span class="highlight-number">01</span>
                         <div>
                             <h3>Backend Development</h3>
-                            <p>Server-side functionality and business logic.</p>
+                            <p>Server-side functionality, clean OOP architecture and business logic.</p>
                         </div>
                     </article>
                     <article class="about-highlight">
                         <span class="highlight-number">02</span>
                         <div>
                             <h3>Database Workflows</h3>
-                            <p>Relational database operations and transactional workflows.</p>
+                            <p>Relational database design, JPA/Hibernate queries and transactional workflows.</p>
                         </div>
                     </article>
                     <article class="about-highlight">
                         <span class="highlight-number">03</span>
                         <div>
                             <h3>Full Stack Perspective</h3>
-                            <p>Understanding application development from backend to frontend.</p>
+                            <p>Connecting reliable APIs with responsive, usable frontend interfaces.</p>
                         </div>
                     </article>
                 </div>
@@ -152,8 +401,8 @@
                 <p class="eyebrow">TECHNICAL TOOLKIT</p>
                 <h2>Technologies I <span>work with.</span></h2>
                 <p class="section-description">
-                    Tools and technologies I have worked with through professional
-                    experience and development projects.
+                    Tools and technologies I have worked with through production
+                    engineering and full-stack development projects.
                 </p>
             </div>
 
@@ -225,27 +474,27 @@
             <div class="specialization-grid">
                 <article class="specialization-card">
                     <span class="specialization-number">01 / 04</span>
-                    <div class="specialization-symbol">⌘</div>
+                    <div class="specialization-symbol" aria-hidden="true">⌘</div>
                     <h3>Backend Applications</h3>
                     <p>Server-side application development, business logic implementation and backend workflows using Java and Spring Boot.</p>
                 </article>
                 <article class="specialization-card">
                     <span class="specialization-number">02 / 04</span>
-                    <div class="specialization-symbol">{ }</div>
+                    <div class="specialization-symbol" aria-hidden="true">{ }</div>
                     <h3>REST API Development</h3>
-                    <p>Developing application endpoints and connecting backend functionality with application interfaces.</p>
+                    <p>Designing structured application endpoints and connecting backend services cleanly with client interfaces.</p>
                 </article>
                 <article class="specialization-card">
                     <span class="specialization-number">03 / 04</span>
-                    <div class="specialization-symbol">▤</div>
+                    <div class="specialization-symbol" aria-hidden="true">▤</div>
                     <h3>Database-Driven Systems</h3>
-                    <p>Relational database operations, JPA/Hibernate integration and business transaction workflows.</p>
+                    <p>Relational schema modeling, JPA/Hibernate integration and consistent business transaction workflows.</p>
                 </article>
                 <article class="specialization-card">
                     <span class="specialization-number">04 / 04</span>
-                    <div class="specialization-symbol">◈</div>
+                    <div class="specialization-symbol" aria-hidden="true">◈</div>
                     <h3>Application Development</h3>
-                    <p>Working across backend and frontend components to deliver functional business applications.</p>
+                    <p>Collaborating across backend and frontend layers to deliver dependable, production-ready business software.</p>
                 </article>
             </div>
         </div>
@@ -280,7 +529,7 @@
                             <li>Develop and maintain Spring Boot modules covering stock management, purchase tracking, sales workflows and investment schemes.</li>
                             <li>Implement enhancements across billing, inventory and financial reporting using JPA/Hibernate and MySQL.</li>
                             <li>Collaborate with the lead developer on architecture, code quality and transactional integrity.</li>
-                            <li>Identify and resolve bugs and production issues.</li>
+                            <li>Identify and resolve bugs and production issues to keep live business operations smooth.</li>
                         </ul>
 
                         <div class="experience-subrole">
@@ -291,7 +540,9 @@
                             <li>Contributed to a PHP-CodeIgniter fintech product through feature development and bug fixes.</li>
                             <li>Studied product architecture and business logic to support ongoing development.</li>
                         </ul>
-                        <div class="experience-tech">Java · Spring Boot · Hibernate · MySQL · PHP · CodeIgniter</div>
+                        <div class="experience-tech">
+                            <span>Java</span><span>Spring Boot</span><span>Hibernate</span><span>MySQL</span><span>PHP</span><span>CodeIgniter</span>
+                        </div>
                     </div>
                 </article>
 
@@ -308,7 +559,9 @@
                             real-time in-hand cash and bank balance by retrieving
                             financial information from a live database.
                         </p>
-                        <div class="experience-tech">Android · Database Integration · Live Data Retrieval</div>
+                        <div class="experience-tech">
+                            <span>Android</span><span>Database Integration</span><span>Live Data Retrieval</span>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -322,8 +575,8 @@
                 <p class="eyebrow">SELECTED WORK</p>
                 <h2>Projects &amp; <span>experience.</span></h2>
                 <p class="section-description">
-                    A selection of applications and development work across
-                    business and financial domains.
+                    A selection of production software and full-stack applications across
+                    retail ERP, hospitality, and fintech domains.
                 </p>
             </div>
 
@@ -376,8 +629,8 @@
                     <h3>Resort Booking Management System</h3>
                     <p>Developed a 24-hour online room booking system for a hospitality use case.</p>
                     <ul class="project-features">
-                        <li>Designed the database schema</li>
-                        <li>Developed the frontend interface</li>
+                        <li>Designed the relational database schema</li>
+                        <li>Developed the responsive frontend interface</li>
                         <li>Implemented the full-stack application structure</li>
                     </ul>
                     <div class="project-tags">
@@ -403,7 +656,7 @@
                     <p>Developed a feature for a fintech Android application to retrieve and display live financial information.</p>
                     <ul class="project-features">
                         <li>Retrieved real-time in-hand cash information</li>
-                        <li>Displayed bank balance information</li>
+                        <li>Displayed live bank balance information</li>
                         <li>Integrated live database data retrieval</li>
                     </ul>
                     <div class="project-tags">
@@ -448,12 +701,12 @@
                 <div class="education-column">
                     <h3 class="column-heading">Certifications</h3>
                     <article class="education-card certification-card">
-                        <span class="certificate-icon">✳</span>
+                        <span class="certificate-icon" aria-hidden="true">✳</span>
                         <h4>Core Java — Multithreading and Classes</h4>
                         <p>LearnKartS</p>
                     </article>
                     <article class="education-card certification-card">
-                        <span class="certificate-icon">✳</span>
+                        <span class="certificate-icon" aria-hidden="true">✳</span>
                         <h4>Docker Fundamentals</h4>
                         <p>LearnKartS</p>
                     </article>
@@ -471,9 +724,15 @@
                 <p>
                     I'm open to Java Backend Developer and Spring Boot opportunities
                     in India and UAE. Let's connect and discuss how I can contribute
-                    to your team.
+                    to your engineering team.
                 </p>
-                <a href="mailto:rhishikanpavithran@gmail.com" class="btn btn-primary contact-button">Get In Touch ↗</a>
+
+                <div class="contact-cta-group">
+                    <a href="mailto:rhishikanpavithran@gmail.com" class="btn btn-primary contact-button">Get In Touch <span aria-hidden="true">↗</span></a>
+                    <button type="button" class="btn btn-outline copy-email-btn" data-email="rhishikanpavithran@gmail.com">
+                        <span class="copy-label">Copy Email Address</span>
+                    </button>
+                </div>
 
                 <div class="contact-details">
                     <div>
@@ -493,6 +752,7 @@
                 <div class="contact-socials">
                     <a href="https://linkedin.com/in/rhishika-n-pavithran" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                     <a href="https://github.com/Rhishika-N-Pavithran" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                    <a href="assets/resume.pdf" download>Resume PDF ↓</a>
                 </div>
             </div>
         </div>
@@ -501,8 +761,8 @@
 
 <footer class="footer">
     <div class="footer-container">
-        <a href="#home" class="logo">rhishik.n.pavithran</a>
-        <p>Java Backend Developer · Spring Boot · Hibernate</p>
+        <a href="#home" class="logo">rhishika.n.pavithran</a>
+        <p>Java Backend Developer · Spring Boot · Hibernate · MySQL</p>
         <a href="#home" class="back-to-top">Back to top ↑</a>
     </div>
     <div class="copyright">
